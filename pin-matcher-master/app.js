@@ -8,7 +8,7 @@ function generateOTP(){
   }
   return OTP
 }
-var result = generateOTP();
+
 
 document.getElementById('OTP-btn').addEventListener('click',function(){
     
@@ -22,7 +22,7 @@ function collectingMynumbers(id){
     const collectValue= document.getElementById(id).innerText;
     let collected = parseInt(collectValue);
 
-    document.getElementById('selfValue').value+=collected;
+    document.getElementById('selfValue').value += collected;
 }
 document.getElementById('one').addEventListener('click',function(){
    collectingMynumbers('one');
@@ -65,7 +65,7 @@ document.getElementById('nine').addEventListener('click',function(){
     collectingMynumbers('zero');
  })
 
- // For Empty input Value
+ // For Cencel Button
 
  document.getElementById('forEmptyScreen').addEventListener('click',function(){
     document.getElementById('selfValue').value = '';
@@ -80,48 +80,37 @@ function back() {
     document.getElementById("selfValue").value = value.substr(0, value.length - 1);
 }
 
-
- // Close Button
-
- 
 //Apply Screen Condition
  
 document.getElementById('submitBtn').addEventListener('click',function(){
   
-    var cScreen = document.getElementById('generateScreen').value;
+    var generateScreen = document.getElementById('generateScreen').value;
   
-    var sScreen = document.getElementById('selfValue').value;
+    var selfScreen = document.getElementById('selfValue').value;
     document.getElementById('generateScreen').value ='';             // One OTP code can use only one time
 
-    if(cScreen === sScreen )  {
+    var span = parseInt(document.getElementById('click').innerText);
+
+    if(generateScreen.length == 4 && selfScreen.length == 4 && generateScreen == selfScreen)  {
         
         document.getElementById('pin-match').style.display='block';
         
         document.getElementById('pin-not-match').style.display='none';
+
+        document.getElementById('invalid-pin').style.display='none';
        
+    }else if( selfScreen.length > 4 ){
+
+        document.getElementById('invalid-pin').style.display='block';
+        
     }
     else {
         document.getElementById('pin-not-match').style.display='block';
+
         document.getElementById('pin-match').style.display='none';
+
+        document.getElementById('invalid-pin').style.display='none';
    
     }
-})
 
-//Disable submit Button
-
-
-document.getElementById('submitBtn').addEventListener('click',function(){
-   var clicks = document.getElementById('click').innerText;
-   var clicked = parseInt(clicks);
-  
-  for (let i = 0; i < clicked.length; i--){
-      const element = clicked[i];
-      document.getElementById('click').innerText = element;
-      if(element<=0){
-        this.disabled = true;
-    }
-  
-  }
- 
-  
 })
