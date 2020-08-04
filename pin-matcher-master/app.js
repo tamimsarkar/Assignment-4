@@ -111,6 +111,7 @@ document.getElementById('submitBtn').addEventListener('click',function(){
         var click = document.getElementById('click').innerText;
         var parsingClickValue = parseInt(click);
         click = parsingClickValue--;
+        
         if(click == 1) {
         document.getElementById('submitBtn').disabled = true;
         }
