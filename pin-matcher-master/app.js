@@ -16,53 +16,53 @@ document.getElementById('OTP-btn').addEventListener('click',function(){
     document.getElementById('generateScreen').value =  generateOTP();
 })
 
-// Function between number buttons and screen
+// Function between number-buttons and screen
 
-function collectingMynumbers(id){
+function collectingBtnValue(id){
     const collectValue= document.getElementById(id).innerText;
     let collected = parseInt(collectValue);
 
     document.getElementById('selfValue').value += collected;
 }
 document.getElementById('one').addEventListener('click',function(){
-   collectingMynumbers('one');
+    collectingBtnValue('one');
 })
 
 document.getElementById('two').addEventListener('click',function(){
-    collectingMynumbers('two');
+    collectingBtnValue('two');
  })
  
 document.getElementById('three').addEventListener('click',function(){
-    collectingMynumbers('three');
+    collectingBtnValue('three');
  })
  
 document.getElementById('four').addEventListener('click',function(){
-    collectingMynumbers('four');
+    collectingBtnValue('four');
  })
  
 document.getElementById('five').addEventListener('click',function(){
-    collectingMynumbers('five');
+    collectingBtnValue('five');
  })
  
 document.getElementById('six').addEventListener('click',function(){
-    collectingMynumbers('six');
+    collectingBtnValue('six');
  })
  
 document.getElementById('seven').addEventListener('click',function(){
-    collectingMynumbers('seven');
+    collectingBtnValue('seven');
  })
 
  
 document.getElementById('eight').addEventListener('click',function(){
-    collectingMynumbers('eight');
+    collectingBtnValue('eight');
  })
  
 document.getElementById('nine').addEventListener('click',function(){
-    collectingMynumbers('nine');
+    collectingBtnValue('nine');
  })
 
  document.getElementById('zero').addEventListener('click',function(){
-    collectingMynumbers('zero');
+    collectingBtnValue('zero');
  })
 
  // For Cencel Button
@@ -112,7 +112,7 @@ document.getElementById('submitBtn').addEventListener('click',function(){
         var parsingClickValue = parseInt(click);
         click = parsingClickValue--;
         
-        if(click == 1) {
+        if(click == 1) {                                                //Disabling Submit button
         document.getElementById('submitBtn').disabled = true;
         }
         
