@@ -104,7 +104,19 @@ document.getElementById('submitBtn').addEventListener('click',function(){
         document.getElementById('invalid-pin').style.display='block';
         
     }
+   
     else {
+        
+        
+        var click = document.getElementById('click').innerText;
+        var parsingClickValue = parseInt(click);
+        click = parsingClickValue--;
+        if(click == 1) {
+        document.getElementById('submitBtn').disabled = true;
+        }
+        
+        document.getElementById('click').innerText = parsingClickValue;
+        
         document.getElementById('pin-not-match').style.display='block';
 
         document.getElementById('pin-match').style.display='none';
